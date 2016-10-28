@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+main()
+{
+    int i,div,sq,rem,n,flag=0;
+    for(n=1;n<=50000;n++)
+    {
+        for(i=1;i<=10;i++)
+        {
+            sq=sqrt(i);
+            for(div=2;div<=sq;div++)
+            {
+                rem=i%div;
+                if(rem==0)
+                {
+                    break;
+                }
+            }
+            if(rem!=0)
+            {
+                if(n%i==0)
+                {
+                    flag=0;
+                }
+                else
+                {
+                    flag=1;
+                    break;
+                }
+            }
+        }
+        if(flag==0)
+        {
+            printf("\n%d",n);
+        }
+    }
+}

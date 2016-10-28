@@ -1,0 +1,48 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+main()
+{
+    int n,i,j,k,sum=0,flag;
+    char a[10][100];
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%s",a[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        flag=0;
+        for(j=0;j<strlen(a[i]);j++)
+        {
+            if(a[i][j]>=97&&a[i][j]<=122)
+            {
+                    continue;
+            }
+            else
+            {
+                flag=1;
+            }
+        }
+        if(flag==0)
+        {
+             for(i=0;i<n;i++)
+   {
+       sum=0;
+       for(j=0;j<strlen(a[i]);j++)
+       {
+           sum+=a[i][j];
+       }
+       if(sum==2847)
+       {
+           printf("\nYES");
+       }
+       else
+       {
+           printf("\nNO");
+       }
+   }
+        }
+    }
+
+}
